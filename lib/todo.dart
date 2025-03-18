@@ -8,15 +8,13 @@ class Todopage extends StatefulWidget {
 }
 
 class _TodopageState extends State<Todopage> {
-  
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Form Page'),
-      ),
+      appBar: AppBar(title: Text('Form Page'), centerTitle: true),
+      
     );
   }
 }
