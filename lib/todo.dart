@@ -14,6 +14,22 @@ class _TodopageState extends State<Todopage> {
   DateTime? selectedDate;
   String? _dateError;
 
+
+  void _addTodo() {
+    if (key.currentState!.validate() && selectedDate != null) {
+      setState(() {
+        _todos.add({
+          'title': _controller.text,
+          'deadline': selectedDate!,
+          'done': false,
+        });
+        _controller.clear();
+        selectedDate = null;
+        _dateError = null;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +74,6 @@ class _TodopageState extends State<Todopage> {
                   ),
                 ],
               ),
-              
               Form(
                 key: key,
                 child: Row(
@@ -75,7 +90,6 @@ class _TodopageState extends State<Todopage> {
                   ],
                 ),
               ),
-              
             ],
           ),
         ),
