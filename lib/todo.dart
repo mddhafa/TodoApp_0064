@@ -14,8 +14,6 @@ class _TodopageState extends State<Todopage> {
   DateTime? selectedDate;
   String? _dateError;
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +30,21 @@ class _TodopageState extends State<Todopage> {
                     'Task Date:',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
+                  const Spacer(),
+                  IconButton(
+                    icon: Icon(Icons.calendar_today),
+                    onPressed: () async {
+                      final DateTime? picked = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(3000),
+                      );
+                    },
+                  ),
                 ],
               ),
-              
+             
             ],
           ),
         ),
