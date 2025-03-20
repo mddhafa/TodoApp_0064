@@ -86,7 +86,7 @@ class _TodopageState extends State<Todopage> {
                   Text(
                     selectedDate == null
                         ? 'Select a date'
-                        : '${selectedDate!.day}-${selectedDate!.month}-${selectedDate!.year}',
+                        : 'Tanggal: ${selectedDate!.day}-${selectedDate!.month}-${selectedDate!.year} Pukul: ${selectedDate!.hour}:${selectedDate!.minute}',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -170,7 +170,7 @@ class _TodopageState extends State<Todopage> {
                                 ),
                                 SizedBox(height: 5),
                                 Text(
-                                  'Deadline: ${todo['deadline'].day}-${todo['deadline'].month}-${todo['deadline'].year}',
+                                  'Deadline: ${todo['deadline'].day}-${todo['deadline'].month}-${todo['deadline'].year} ${todo['deadline'].hour}:${todo['deadline'].minute}',
                                   style: TextStyle(color: Colors.blueGrey),
                                 ),
                                 SizedBox(height: 5),
