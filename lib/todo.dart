@@ -44,6 +44,20 @@ class _TodopageState extends State<Todopage> {
                   ),
                 ],
               ),
+              Row(
+                children: [
+                  Text(
+                    selectedDate == null
+                        ? 'Select a date'
+                        : '${selectedDate!.day}-${selectedDate!.month}-${selectedDate!.year}',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: _dateError != null ? Colors.red : Colors.black,
+                    ),
+                  ),
+                ],
+              ),
              
             ],
           ),
