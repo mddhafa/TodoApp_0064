@@ -29,6 +29,34 @@ class _TodopageState extends State<Todopage> {
       });
     }
   }
+  
+  Future<void> _selectDateTime(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(3000),
+    );
+    if (pickedDate != null) {
+      final TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+      );
+      if (pickedTime != null) {
+        setState(() {
+          selectedDate = DateTime(
+            pickedDate.year,
+            pickedDate.month,
+            pickedDate.day,
+            pickedTime.hour,
+            pickedTime.minute,
+          );
+          _dateError = null;
+        });
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,20 +77,7 @@ class _TodopageState extends State<Todopage> {
                   const Spacer(),
                   IconButton(
                     icon: Icon(Icons.calendar_today),
-                    onPressed: () async {
-                      final DateTime? picked = await showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(2000),
-                        lastDate: DateTime(3000),
-                      );
-                      if (picked != null) {
-                        setState(() {
-                          selectedDate = picked;
-                          _dateError = null;
-                        });
-                      }
-                    },
+                    onPressed: () => _selectDateTime(context),
                   ),
                 ],
               ),
