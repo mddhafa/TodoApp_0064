@@ -99,6 +99,13 @@ class _TodopageState extends State<Todopage> {
                           labelText: 'Kegiatan',
                           hintText: 'Masukkan kegiatan',
                         ),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Kegiatan tidak boleh kosong';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
