@@ -169,6 +169,14 @@ class _TodopageState extends State<Todopage> {
                               ],
                             ),
                           ),
+                          Checkbox(
+                            value: isDone,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                _todos[index]['done'] = value!;
+                              });
+                            },
+                          ),
                         ],
                       ),
                     );
