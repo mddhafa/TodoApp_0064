@@ -80,6 +80,14 @@ class _TodopageState extends State<Todopage> {
                   ),
                 ],
               ),
+              if (_dateError != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, bottom: 10),
+                  child: Text(
+                    _dateError!,
+                    style: TextStyle(color: Colors.red, fontSize: 12),
+                  ),
+                ),
               Form(
                 key: key,
                 child: Row(
@@ -93,7 +101,6 @@ class _TodopageState extends State<Todopage> {
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
               ),
