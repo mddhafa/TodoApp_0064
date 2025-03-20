@@ -56,6 +56,12 @@ class _TodopageState extends State<Todopage> {
                         firstDate: DateTime(2000),
                         lastDate: DateTime(3000),
                       );
+                      if (picked != null) {
+                        setState(() {
+                          selectedDate = picked;
+                          _dateError = null;
+                        });
+                      }
                     },
                   ),
                 ],
@@ -87,6 +93,7 @@ class _TodopageState extends State<Todopage> {
                         ),
                       ),
                     ),
+                    
                   ],
                 ),
               ),
