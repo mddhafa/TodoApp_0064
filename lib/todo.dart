@@ -153,6 +153,11 @@ class _TodopageState extends State<Todopage> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                                SizedBox(height: 5),
+                                Text(
+                                  'Deadline: ${todo['deadline'].day}-${todo['deadline'].month}-${todo['deadline'].year}',
+                                  style: TextStyle(color: Colors.blueGrey),
+                                ),
                               ],
                             ),
                           ),
