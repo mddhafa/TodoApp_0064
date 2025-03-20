@@ -158,6 +158,7 @@ class _TodopageState extends State<Todopage> {
                                   'Deadline: ${todo['deadline'].day}-${todo['deadline'].month}-${todo['deadline'].year}',
                                   style: TextStyle(color: Colors.blueGrey),
                                 ),
+                                SizedBox(height: 5),
                                 Text(
                                   isDone ? 'Done' : 'Not Done',
                                   style: TextStyle(
