@@ -58,7 +58,24 @@ class _TodopageState extends State<Todopage> {
                   ),
                 ],
               ),
-             
+              
+              Form(
+                key: key,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _controller,
+                        decoration: const InputDecoration(
+                          labelText: 'Kegiatan',
+                          hintText: 'Masukkan kegiatan',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              
             ],
           ),
         ),
