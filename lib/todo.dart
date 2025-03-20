@@ -108,6 +108,21 @@ class _TodopageState extends State<Todopage> {
                         },
                       ),
                     ),
+                    OutlinedButton(
+                      onPressed: () {
+                        setState(() {
+                          if (selectedDate == null) {
+                            _dateError = 'Tanggal harus dipilih';
+                          }
+                        });
+
+                        if (key.currentState!.validate() &&
+                            selectedDate != null) {
+                          _addTodo();
+                        }
+                      },
+                      child: const Text('Tambah'),
+                    ),
                   ],
                 ),
               ),
