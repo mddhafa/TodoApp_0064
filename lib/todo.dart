@@ -126,6 +126,16 @@ class _TodopageState extends State<Todopage> {
                   ],
                 ),
               ),
+              SizedBox(height: 20),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: _todos.length,
+                  itemBuilder: (context, index) {
+                    final todo = _todos[index];
+                    final isDone = todo['done'];
+                  },
+                ),
+              ),
             ],
           ),
         ),
