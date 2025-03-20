@@ -133,6 +133,14 @@ class _TodopageState extends State<Todopage> {
                   itemBuilder: (context, index) {
                     final todo = _todos[index];
                     final isDone = todo['done'];
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    );
                   },
                 ),
               ),
