@@ -14,13 +14,31 @@ class _TodopageState extends State<Todopage> {
   DateTime? selectedDate;
   String? _dateError;
 
-
+ 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Form Page'), centerTitle: true),
-      
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Task Date:',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
